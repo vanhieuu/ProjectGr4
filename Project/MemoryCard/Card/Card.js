@@ -24,6 +24,8 @@ let modal = document.getElementById("popup1")
 var openedCards = [];
 
 
+let recentMove = localStorage.getItem('moves')
+let scoreMoves = JSON.parse(localStorage.getItem('scoreMoves'));
 
 
 function shuffle(arr) {
@@ -232,6 +234,17 @@ function startGame() {
             card.addEventListener("click",congratulations);
         };
         
+            function localStorage(key, value){
+
+
+
+            }
+
+
+        
+
+
+
     // Khi tác động vào lá bài hiện ra class để vô hiệu hóa lá bài
         // var displayCards = function () {
         //     this.classList.toggle("open");

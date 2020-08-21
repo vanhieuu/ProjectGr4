@@ -1,4 +1,9 @@
-  body {
+.label-name{
+  size: 2cm;
+  color: aliceblue;
+}
+ 
+ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
