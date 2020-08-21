@@ -159,14 +159,14 @@ function startGame() {
                         startTimer();
                     }
                 // Đánh giá qua số lượng nước đi;
-                if(moves > 8 && moves <12){
+                if(moves > 10 && moves < 18){
                         for (let i = 0; i <3; i++) {
                             if(moves >1){
                             stars[i].style.visibility = "collapsed";
                             }
                          }
                     }     
-                else if (moves > 13){
+                else if (moves > 18){
                         for (i = 0; i < 3; i++) {
                            if(i >0){
                             stars[i].style.visibility = "collapsed";
