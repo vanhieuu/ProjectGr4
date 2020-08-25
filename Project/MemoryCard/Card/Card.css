@@ -40,7 +40,7 @@ h1 {
 
 
 .deck {
-	width: 85%;
+	width: auto;
 	background: #716F71;
 	padding: 1rem;
 	border-radius: 4px;
@@ -49,7 +49,7 @@ h1 {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
-	margin: 0 0 3em;
+	margin: auto;
 }
 
 .deck .card {
@@ -302,10 +302,12 @@ h1 {
 
 @media (max-width: 320px) {
 	.deck {
+		padding: auto;
 		width: 85%;
 	}
 
 	.deck .card {
+		padding: auto;
 		height: 4.7rem;
 		width: 4.7rem;
 	}
@@ -334,4 +336,42 @@ h1 {
 		width: 60%;
 	}
 }
-
+form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+input{
+	margin-bottom: 1rem;
+	width: 20rem;
+	padding: 1.5rem;
+	font-size: 1.8rem;
+	border: none;
+	box-shadow: 0 0.1rem 1.4 rem  0 rgba(86, 185, 235, 0.5);
+}
+input ::placeholder{
+	color: #aaa ;
+}
+#save-Score{
+	background-color: #141214;
+	padding: 0.7rem 1rem;
+	font-size: 1.1rem;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #ffffff;
+	border-radius: 5px;
+}
+#go-home{
+	background-color: #141214;
+	padding: 0.7rem 1rem;
+	font-size: 1.1rem;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #ffffff;
+	border-radius: 5px;
+}

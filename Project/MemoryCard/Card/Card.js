@@ -6,9 +6,10 @@ let cards = [...card];
 const deck = document.getElementById("card-deck")
 
 // đếm số lượng bước đi
-let moves = 0;
-let counter = document.querySelector(".moves");
-
+var moves = 0;
+var counter = document.querySelector(".moves");
+//thời gian
+var timer = document.querySelector(".timer");
 // Khai báo biến cho đánh giá sao
 const stars = document.querySelectorAll(".fa-star");
 
@@ -22,10 +23,6 @@ let closeicon = document.querySelector(".close");
 
 let modal = document.getElementById("popup1")
 var openedCards = [];
-
-
-let recentMove = localStorage.getItem('moves')
-let scoreMoves = JSON.parse(localStorage.getItem('scoreMoves'));
 
 
 function shuffle(arr) {
@@ -47,8 +44,10 @@ function shuffle(arr) {
        document.body.onload = startGame();
       
 
+
 function startGame() {
-            
+  
+
             // Làm trống mảng những lá bài mở 
             openedCards = [];
             // Tráo bài
@@ -65,6 +64,9 @@ function startGame() {
                 // reset nước đi
                 moves = 0;
                 counter.innerHTML.moves;
+                
+                localStorage.setItem("totalTime", timer)
+                localStorage.setItem("totalMove", moves)
                 // reset đánh giá 
                 for(var i  = 0; i< stars.length; i++){
                         stars[i].style.color = "#FFD700"; // màu
@@ -74,7 +76,7 @@ function startGame() {
                 second  = 0;
                 minute = 0;
                 hour = 0;
-                var timer = document.querySelector(".timer");
+              
                 timer.innerHTML = "0 mins 0 secs";
                 clearInterval(interval);
         }
@@ -151,8 +153,9 @@ function startGame() {
         
 
         function moveCounter() {
+           
             moves++;
-            counter.innerHTML = moves;
+           counter.innerHTML = moves;
                 // bắt đầu tính thời gian khi bắt đầu chơi;
                     if( moves == 1){
                         second = 0;
@@ -199,7 +202,7 @@ function startGame() {
         function congratulations() {
             if(matchedCard.length ==16){
                 clearInterval(interval);
-                finalTime = timer.innerHTML;
+              var  finalTime = timer.innerHTML;
 
                     modal.classList.add("show");
                     var starRating = document.querySelector(".stars").innerHTML
@@ -208,6 +211,7 @@ function startGame() {
                     document.getElementById("finalMove").innerHTML = moves;
                     document.getElementById("starRating").innerHTML = starRating;
                     document.getElementById("totalTime").innerHTML = finalTime;
+                    
                     closeModal();
             
             }
@@ -227,42 +231,10 @@ function startGame() {
         }
 
         // Khởi tạo vòng lặp để thêm các lá bài 
+      
         for (var i = 0; i < cards.length; i++) {
             card = cards[i]
             card.addEventListener("click", displayCard);
             card.addEventListener("click", cardOpen);
             card.addEventListener("click",congratulations);
         };
-        
-            function localStorage(key, value){
-
-
-
-            }
-
-
-        
-
-
-
-    // Khi tác động vào lá bài hiện ra class để vô hiệu hóa lá bài
-        // var displayCards = function () {
-        //     this.classList.toggle("open");
-        //     this.classList.toggle("show");
-        //     this.classList.toggle("disabled")
-        // }
-    
-    
-    
-    // Khởi tạo giá trị bộ bài
-    // Khởi tạo giá trị .deck bên htm
-        // const deck = document.querySelector(".deck")
-        // function startGame(){
-        //     var shuffleCards = shuffle(cards) // khởi tạo giá trị tráo bài
-        //         for (let i = 0; i < shuffle.length; i++) {
-        //             [].forEach.call(shuffleCards, function(items){
-        //                 deck.appendChild(items)
-        //             })
-        //         }        
-    //     }
-    // }

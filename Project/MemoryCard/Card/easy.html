@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memorygame</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet prefetch" href="font-awesome.min.css">
-    <link rel="stylesheet prefetch" href="font.css">
-        <link rel="stylesheet" href="Card.css">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" >
+    <link rel="stylesheet" href="Card.css">
 </head>
 <body>
-    <body style="background: url(Img/mau-background-dep.jpg);">
+    <body >
   
         <ul class="nav" style="font-size: xx-large;">
           <li class="nav-item">
@@ -89,7 +88,6 @@
                 <i class="fa fa-cube"></i>
             </li>
         </ul>
-
         <div id="popup1" class="overlay">
             <div class="popup">
                 <h2>Congratulations 🎉</h2>
@@ -102,13 +100,27 @@
                     <p>in <span id=totalTime> </span> </p>
                     <p>Rating:  <span id=starRating></span></p>
                 </div>
+
+            </button>
+            <form>
+                <input 
+                type="text"
+                name="username"
+                id="username"
+                placeholder="username"
+                />
+            </form>
+            <button id="save-Score" type="submit" class="btn" onclick="saveScore(event)">Save Score</button>
+
                 <button id="play-again"onclick="playAgain()">
                     Play again 😄</a>
-                </button>
+                
+                <button id="go-home"> <a href="home.html"></a>    Home </button>
             </div>
         </div>
     </div>
-    
+                        <script src="end.js"></script>
                         <script src="Card.js"></script>
+                        <script src="score.js"></script>
 </body> 
 </html>
