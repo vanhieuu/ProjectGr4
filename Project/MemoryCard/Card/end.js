@@ -1,27 +1,27 @@
        
   
-   var username = document.getElementById('username');
-    var saveScoreBtn = document.getElementById('btn')
-    var finalTime = document.getElementsByClassName('timer')
-    var moves = document.getElementsByClassName('moves')
+const username = document.getElementById('username');
+   const saveScoreBtn = document.getElementById('save-Score');
 
             var totalTime = localStorage.getItem('totalTime');
-            var totalMove = JSON.parse(localStorage.getItem('totalMove')) 
-            var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+             var totalMove = JSON.parse(localStorage.getItem('totalMove'))
+            var highScores = JSON.parse(localStorage.getItem('movesAndTime')) || [];
+           
             username.addEventListener('keyup', () => {
                 saveScoreBtn.disabled = !username.value;
             });
-
+        
             let saveScore = (e) => {
                 e.preventDefault();
-                var moveandTimeScore = {
-                    moveScore: moveCounter,
-                    timeScore :timeplay,
+                const moveandTimeScore = {
+                    moveScore: totalMove -1 ,
+                    timeScore :totalTime ,
                     name: username.value,
                 }
+               
                 highScores.push(moveandTimeScore);
                 highScores.sort((a, b) => b.moveandTimeScore - a.moveandTimeScore);
-                highScores.splice(5);
             
-                localStorage.setItem('highScores', JSON.stringify(highScores));
+                localStorage.setItem('moveandTimes', JSON.stringify(highScores));
+
             }; 

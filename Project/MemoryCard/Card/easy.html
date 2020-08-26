@@ -33,7 +33,7 @@
             <div class="timer">
             </div>
 
-            <div class="restart" onclick=startGame()>
+            <div class="restart" onclick="startGame()">
         		<i class="fa fa-repeat"></i>
         	</div>
         </section>
@@ -54,7 +54,7 @@
             <li class="card" type="cube">
                 <i class="fa fa-cube"></i>
             </li>
-            <li class="card match" type="anchor">
+            <li class="card" type="anchor">
                 <i class="fa fa-anchor"></i>
             </li>
             <li class="card" type="leaf">
@@ -75,7 +75,7 @@
             <li class="card" type="bomb">
                 <i class="fa fa-bomb"></i>
             </li>
-            <li class="card " type="bolt">
+            <li class="card" type="bolt">
                 <i class="fa fa-bolt"></i>
             </li>
             <li class="card" type="bicycle">
@@ -88,6 +88,7 @@
                 <i class="fa fa-cube"></i>
             </li>
         </ul>
+
         <div id="popup1" class="overlay">
             <div class="popup">
                 <h2>Congratulations 🎉</h2>
@@ -100,7 +101,8 @@
                     <p>in <span id=totalTime> </span> </p>
                     <p>Rating:  <span id=starRating></span></p>
                 </div>
-
+                <button id="play-again"onclick="playAgain()">
+                    Play again 😄</a>
             </button>
             <form>
                 <input 
@@ -110,17 +112,23 @@
                 placeholder="username"
                 />
             </form>
-            <button id="save-Score" type="submit" class="btn" onclick="saveScore(event)">Save Score</button>
-
-                <button id="play-again"onclick="playAgain()">
-                    Play again 😄</a>
-                
-                <button id="go-home"> <a href="home.html"></a>    Home </button>
+            <button 
+            type="submit" 
+            class="btn" 
+            id="save-Score" 
+            onclick="saveScore(event)" 
+            disabled
+            >
+            Save 
+             </button>
+                <button id="go-home"> <a href="home.html"> Home</button></a>
             </div>
         </div>
     </div>
+                        <script src="easy.js"></script>
                         <script src="end.js"></script>
-                        <script src="Card.js"></script>
                         <script src="score.js"></script>
+
+                       
 </body> 
 </html>

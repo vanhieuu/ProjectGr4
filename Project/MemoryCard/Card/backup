@@ -1,0 +1,6 @@
+
+                     document.getElementById("finalMove").innerHTML = moves;
+                     localStorage.setItem('totalMoves', moves)
+                     document.getElementById("starRating").innerHTML = starRating;
+                     document.getElementById("totalTime").innerHTML = finalTime;
+                     localStorage.setItem('totalTime',finalTime)
